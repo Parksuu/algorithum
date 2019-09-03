@@ -1,0 +1,74 @@
+import java.util.*;
+
+
+public class kakao_2017_컬러링북 {
+	
+	class Pos{
+		int x;
+		int y;
+		
+		public Pos(int x, int y) {
+			x = this.x;
+			y = this.y;
+		}
+	}
+	
+
+	  public int[] solution(int m, int n, int[][] picture) {
+	      int numberOfArea = 0;
+	      int maxSizeOfOneArea = 0;
+	      
+	      int mx[] = {-1, 0, 1, 0};
+	      int my[] = { 0, 1, 0,-1};
+	      
+	      int[] answer = new int[2];
+	      
+	      int visited[][] = new int[m][n]; //전부 0으로 초기화하고, 방문했으면 그 숫자들로 채운다
+	      
+	      Queue<Pos> pos = new LinkedList<Pos>();
+	      
+	      //while들어가기 전
+	      for(int i=0;i<m; i++) {
+	    	  for(int j=0; j<n; j++) {
+	    		  
+	    		  if(picture[i][j] != 0 && visited[i][j] ==0) {
+	    			  numberOfArea++; //영역 하나 찾은거니까
+	    			  int nowOneArea = 1; //nowOneArea에 현재 영역의 크기를 넣어주고 maxSizeOfOneArea와 비교함
+	    			  
+	    			  visited[i][j] = picture[i][j]; //채워주고
+	    			  pos.add(new Pos(i,j)); //qu에 넣어주고
+	    			  
+	    			  while(!pos.isEmpty()) {
+	    				  // 1)head 빼내서
+	    				  Pos now = pos.poll();
+	    				  
+	    				  // 2)4면 비교해서 같은 숫자이면서 visited하지 않은 곳을 큐에 넣음
+	    				  for(int k=0; k<4; k++) {
+	    					  int xx = now.x + mx[k];
+	    					  int yy = now.y + my[k];
+	    					  
+	    					  if(xx<0 || yy<0 || xx>=m || yy>=n)//이동한 위치가  컬러링 밖으로 나가면
+	    						  continue;
+	    					  if(visited[xx][yy] !=0 || picture[xx][yy] ==0)//이동한 위치가 방문한곳이거나, 이동한 위치의 picture가 0이면
+	    						  continue;
+	    					  if(picture[xx][yy] != picture[now.x][now.y]) //poll한 곳의 숫자와 이동한 곳의 숫자가 다르다면
+	    						  continue;
+	    				  }
+	    				  
+	    			  }//while
+	    		  }//if
+	    		  
+	    	  }//for
+	      }//for
+	      
+	      
+	      
+	      
+	      return answer;
+	  }
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

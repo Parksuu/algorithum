@@ -1,0 +1,65 @@
+import java.util.*;
+
+
+public class programmers_2_42586 {
+
+    static public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        List<Integer> list = new LinkedList<Integer>();//답 담는 곳
+        LinkedList<Integer> qu = new LinkedList<Integer>();
+        
+        int size = progresses.length;
+        
+        for(int i=0;i<size; i++) 
+        	qu.add(progresses[i]);//작업율
+        
+        
+        while(!qu.isEmpty()) {
+   	
+        	//큐의 head가 100이 아니라면
+        	if(qu.element() < 100) {
+
+        		for(int i=0;i<qu.size();i++) {
+
+        			int n = qu.get(i) + speeds[i];
+        			qu.set(i,n);
+        		}
+        		
+        	}
+        	
+        	
+        	//큐의 head가 100이되면
+        	else {
+	        	//0이 아닌 곳을 만날 때까지 num을 증가시키고 list에 num값 추가 & num 초기화
+        		int num = 1;
+        		qu.removeFirst();
+        		
+        		if(qu.element() >=100) {
+	        		while(qu.element() >= 100) {
+	        			qu.removeFirst();
+	        			num++;
+	        		}
+        		}
+        		
+        		list.add(num);
+        	}
+        	
+        }//while 끝
+        
+        return list.stream().mapToInt(i->i).toArray();
+    }
+	
+	
+	public static void main(String[] args) {
+		
+		int pro[] = {93,30,55};
+		int sp[] = {1,30,5};
+		
+		int an[] = solution(pro,sp);
+		for(int i : an) {
+			System.out.print(i + ", ");
+		}
+		
+		
+	}
+}

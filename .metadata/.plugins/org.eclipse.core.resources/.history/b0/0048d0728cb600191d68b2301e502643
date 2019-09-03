@@ -1,0 +1,14 @@
+
+public class programmers12926 {
+
+	
+	public static void main(String[] args) {
+		
+		char c = 'c' + 1;
+		
+		System.out.println(c);
+		
+	}
+	
+	
+}

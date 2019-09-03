@@ -1,0 +1,63 @@
+import java.util.*;
+
+public class beak_3190_뱀 {
+
+	static int wall[][];
+	
+	static class Pos{
+		int x;
+		int y;
+		
+		//생성자
+		public Pos(int x,int y) {
+			x = this.x;
+			y = this.y;
+		}
+	}
+	
+	static int changeDir(int dir, char c) {
+		int new_dir=0;
+		
+		return new_dir;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt(); //보드 크기
+		wall = new int[n+2][n+2]; //1부터 시작하려고
+		int time = 0 ;//시간
+		int dir = 1; //이동방향
+		
+		Queue<Pos> bam = new LinkedList<Pos>(); //
+		char inst[] = new char[100001]; //명령어
+		
+		//벽 ->2
+		for(int i=0;i<n+2; i++) {
+			for(int j=0;j<n+2; j++) {
+				if(i==0 || j==0 || i==n+1 || j==n+1)
+					wall[i][j] = 2; //0번째 행,열과 n+1번째 행,열을 벽으로 만들어줌
+			}
+		}
+		
+		//사과 ->1
+		int k = sc.nextInt(); //사과 개수
+		for(int i=0;i<k; i++) {
+			int a=sc.nextInt();
+			int b = sc.nextInt();
+			wall[a][b]=1;
+		}
+		
+		//명령어를 inst[n]번째 자리에 넣어주겠다
+		int l = sc.nextInt(); //명령어 개수
+		for(int i=0; i<l; i++) {
+			inst[sc.nextInt()] = sc.next().charAt(0); //string으로 받아서 0번쨰 거 char로 변
+		}
+
+		
+		
+	}
+}

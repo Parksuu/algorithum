@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class programmers_2_ž {
+    
+	static public int[] solution(int[] heights) {
+		
+		int size = heights.length;
+		
+        int[] answer = new int[size];
+        
+        int num = size-1;
+        
+        for(int i= size-1; i>=0; i--) {
+        	for(int j = i-1; j>=0; j--) {
+        		if(heights[i]<heights[j]) {
+        			answer[num] = j+1;
+        			break;
+        		}
+        		else
+        			answer[num] = 0;
+        		
+        		num--;
+        		
+        		System.out.println("answer[num] = " + answer[num] + "num= " + num);
+        	}
+        }
+        
+        
+        return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+		int s[] = {6,9,5,7,4};
+		
+		for(int i=0;i<s.length; i++) {
+			int ans[] = solution(s);
+			System.out.println(ans[i]);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

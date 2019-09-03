@@ -1,0 +1,36 @@
+import java.util.*;
+
+
+public class programmers_3_네트워크{
+
+	static int computer[][];
+	static boolean visited[];
+	static List<Integer> list = new LinkedList<Integer>();
+	static int answer = 0;
+	
+	static int dfs(int a[][], boolean visited[], int idx) {
+
+		visited[idx] = true; //idx 방문
+		list.add(idx);
+
+		return answer;
+	}
+	
+    static public int solution(int n, int[][] computers) {
+    	computer = computers;
+    	visited = new boolean[n];
+
+    	for(int i=0;i<n;i++) {
+    		dfs(computer,visited,i); //한번 돌고 나올 때 마다 연결 되어있는 애들 다 체크해서 나오니까 
+    		answer++; //그 때 마마다 answer +1 해준다
+    	}
+
+        return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+		int a[][] = {{1,1,0},{1,1,0},{0,0,1}};
+		System.out.println("답 " +solution(3,a));
+	}
+}

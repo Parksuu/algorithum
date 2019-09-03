@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class beak_3190_뱀 {
+
+	static int wall[][];
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		wall = new int[n+1][n+1]; //1부터 시작하려고
+		
+	}
+
+}

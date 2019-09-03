@@ -1,0 +1,38 @@
+import java.util.*;
+
+
+
+public class programmers_2_¿ß¿Â {
+
+	static int data[]= {1,2,3,4,5};
+	static int flag[]= {0,0,0,0,0};
+	
+	static void powerset(int n, int dep) {
+		if(n == dep) {
+			int i;
+			for(i=0;i<n;i++) {
+				if(flag[i]==1)
+					System.out.print(data[i]);
+			}
+			System.out.println(" ");
+			return;
+		}
+		flag[dep]=1;
+		powerset(n,dep+1);
+		flag[dep]=0;
+		powerset(n,dep+1);
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+		powerset(5,0);
+		
+		//
+		
+		
+		
+	}
+}

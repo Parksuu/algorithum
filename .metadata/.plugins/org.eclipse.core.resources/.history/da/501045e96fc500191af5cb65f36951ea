@@ -1,0 +1,37 @@
+import java.util.*;
+
+
+public class programmers_2_Å¸°Ù³Ñ¹ö {
+
+	public int solution(int[] numbers, int target) {
+    
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        list.add(numbers[0]);
+        list.add(-1 * numbers[0]);
+        
+        for(int i=1;i<numbers.length; i++) {
+        	int size = list.size();
+ 
+        	for(int j=0; j<size; j++) {
+        		int a = list.remove(j);
+        		list.add( a + numbers[i]);
+        		list.add( a + (-1 * numbers[i]) );
+        	}//for	
+        }//for
+        
+        int answer = 0;         
+        for(int i=0;i<list.size(); i++) {
+        	if(list.get(i) == target)
+        		answer++;
+        }
+        
+        return answer;
+    }
+    
+	public static void main(String[] args) {
+		
+		System.out.println(add(3));
+		
+	}
+}

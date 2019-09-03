@@ -1,0 +1,73 @@
+
+import java.util.*;
+
+public class programmers_2_49993 {
+
+    static public int solution(String skill, String[] skill_trees) {
+        int answer = 0;
+        ArrayList<Integer> location;
+        
+        String st[] = new String[skill.length()]; //skill의 내용들을
+        
+        for(int i=0; i<skill.length(); i++)
+        	st[i] = String.valueOf(skill.charAt(i));
+ 
+        
+       for(int i=0; i<skill_trees.length; i++) {
+    	   
+    	   location = new ArrayList<Integer>();//한 스킬 트리 확인할 때 마다 초기화
+       	   boolean check = false;
+       	   
+        	for(int j=0; j<st.length; j++) {
+        				
+        		if(skill_trees[i].contains(st[j])) {
+        			//skill_tress에 j가 있으면
+        			location.add(skill_trees[i].indexOf(st[j]));
+        		}
+        	}
+        	
+        	System.out.println(location);
+        	
+        	if(location.isEmpty() || location.size() ==1) 
+        		answer = answer +1;
+        	
+        	else {
+	        	int num = location.get(0);
+	        	
+	        	for(int k=1; k<location.size(); k++) {
+	        		if(num>location.get(k)) {
+	        			System.out.println("여기서");
+	        			break;
+	        		}
+	        		else {
+	        			check = true;
+	        		}
+	        		
+	        		System.out.println("여기로 오면 안되고");
+	        		num = location.get(k);
+	        	}
+	        	
+	        	if(check == true) {
+	        		System.out.println("여기는 당연히 오면 안되고");
+	        		answer = answer+1;
+	        	}
+        	
+        	}
+        	
+        	
+        }
+        
+        return answer;
+    }
+	
+    
+    public static void main(String[] args) {
+		String skill = "CBD";
+    	String s[] = {"BACDE"};
+//    	String s[] = {"BACDE", "CBADF", "AECB", "BDA"};
+    	
+    	System.out.println(solution(skill,s));
+	}
+    
+	
+}

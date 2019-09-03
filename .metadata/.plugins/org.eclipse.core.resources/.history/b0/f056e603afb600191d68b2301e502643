@@ -1,0 +1,30 @@
+
+public class programmers12913 {
+
+   static int solution(int[][] land) {
+        int answer = 0;
+
+        int size = land.length; //행의 개수
+        int temp[][] = new int[10000][4];
+        
+        for(int i=0;i<4;i++) //첫 행의 1,2,3,4 저장
+        	temp[0][i] = land[0][i];
+        
+        for(int i=1; i<size;i++) { //두번째 행부터 마지막 행까지 for문
+        	for(int j=0; j<4; j++) { // 1,2,3,4 열 다 돌기
+        		for(int k=0; k<4; k++) { // 1,2,3,4, 열 다 돌기
+        			if(j !=k) //if j가 0이면 k는 1,2,3 돌고.. -> index 안겹치게 가능
+        				temp[i][j] = Math.max(temp[i][j], temp[i-1][j] + land[i][k]);
+        		}
+        	}
+        }
+        
+        for(int i=0; i<4; i++)
+        	answer = Math.max(answer, temp[size-1][i]);
+        return answer;
+    }
+    
+    public static void main(String[] args) {
+    	
+	}
+}

@@ -1,0 +1,25 @@
+import java.util.*;
+
+
+public class bamm{
+
+	static class pos{
+		int x;
+		int y;
+		
+		//持失切
+		public pos(int x,int y) {this.x=x; this.y=y;}
+	}
+	
+	
+   public static void main(String[] args) {
+	   
+	   Queue<pos> qu = new LinkedList<pos>();//泥 持失
+	   
+	   pos p = new pos(1,1);
+	   
+	   qu.offer(p);
+	   
+	   System.out.println(qu.element());
+  }
+}

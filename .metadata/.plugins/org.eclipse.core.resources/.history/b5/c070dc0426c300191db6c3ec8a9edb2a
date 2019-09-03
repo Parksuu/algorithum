@@ -1,0 +1,98 @@
+import java.util.*;
+
+
+public class bamm{
+
+   static int dr[] = {-1 ,0, 1, 0};
+   static int dc[] = {0, 1, 0, -1};
+
+   static class Pos{
+       int r;
+       int c;
+       public Pos(int r, int c){this.r = r; this.c = c;}
+  }
+
+   private static int changeDir(int cur_dir, char instruct){
+       int next_dir;
+       if(instruct == 'D')
+           next_dir = (cur_dir==3) ? 0 : ++cur_dir;
+       else
+           next_dir = (cur_dir==0)? 3 : --cur_dir;
+
+       return next_dir;
+  }
+
+   private static Pos getNextPos(Pos pos, int dir){
+       Pos next_pos = new Pos(pos.r, pos.c);
+       switch (dir){
+           case 0: --next_pos.r; break;
+           case 1: ++next_pos.c; break;
+           case 2: ++next_pos.r; break;
+           case 3: --next_pos.c; break;
+      }
+       return next_pos;
+  }
+​
+
+   
+   
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+
+       int N = sc.nextInt();   // 보드 크기 (N x N)
+       int K = sc.nextInt();   // 사과 개수
+       int L;                  // 명령어 개수
+       int time = 0;           // 시간초
+       int dir = 1;            // 이동 방향 (북-0, 동-1, 남-2, 서-3)
+
+       Queue<Pos> baam = new LinkedList<>();   // 뱀의 몸 좌표를 넣을 큐
+       int map[][] = new int[N+2][N+2];        // 보드 (0-빈칸, 1-사과, 2-벽)
+       char instruct[] = new char[100001];     // 명령
+
+       // 벽 세팅
+       for(int i=0; i<N+2; i++)
+           for(int j=0; j<N+2; j++)
+               if(i==0 || j==0 || i==N+1 || j==N+1)
+                   map[i][j] = 2;
+       // 사과 세팅
+       for(int i=0; i<K; i++)
+           map[sc.nextInt()][sc.nextInt()] = 1;
+
+       L = sc.nextInt();
+       // 명령어 저장
+       for(int i=0; i<L; i++)
+           instruct[sc.nextInt()] = sc.next().charAt(0);
+
+       Pos cur_pos = new Pos(1, 1);
+       baam.offer(cur_pos);
+       map[cur_pos.r][cur_pos.c] = 2;
+
+       while(true){
+           ++time;
+           // 뱀의 머리 위치 이동
+           cur_pos.r += dr[dir];
+           cur_pos.c += dc[dir];
+           cur_pos = getNextPos(cur_pos, dir);
+
+           // 벽이나 뱀의 몸을 만났을 경우 게임 종료
+           if(map[cur_pos.r][cur_pos.c] == 2 ){
+               break;
+          }
+
+           // 빈칸인 경우 마지막 칸 꼬리를 비워줌
+           if(map[cur_pos.r][cur_pos.c] == 0){
+               Pos retail = baam.poll();
+               map[retail.r][retail.c] = 0;
+          }
+           // 머리를 큐에 넣고 맵의 변수 변경
+           baam.offer(cur_pos);
+           map[cur_pos.r][cur_pos.c] = 2;
+
+           // 방향전환
+           if(instruct[time] == 'D' || instruct[time] == 'L')
+               dir = changeDir(dir, instruct[time]);
+      }
+
+       System.out.println(time);
+  }
+}

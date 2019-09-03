@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class beak_3190_뱀 {
+
+	static int wall[][];
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		wall = new int[n+2][n+2]; //1부터 시작하려고
+		
+		//벽 ->2
+		
+		//사과 ->1
+		int k = sc.nextInt();
+		for(int i=0;i<k; i++) {
+			int a=sc.nextInt();
+			int b = sc.nextInt();
+			wall[a][b]=1;
+		}
+		
+
+	}
+}

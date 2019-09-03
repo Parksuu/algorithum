@@ -1,0 +1,14 @@
+
+public class programmers12934 {
+
+	  public long solution(long n) {
+	      long answer = 0;
+	      
+	      
+	      return answer;
+	  }
+	  
+	  public static void main(String[] args) {
+		
+	}
+}

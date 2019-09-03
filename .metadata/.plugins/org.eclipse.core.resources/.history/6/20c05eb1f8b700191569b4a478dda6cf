@@ -1,0 +1,55 @@
+import java.util.*;
+
+
+public class programmers_2_42586 {
+
+    static public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        LinkedList<Integer> qu = new LinkedList<Integer>();
+        
+        int size = progresses.length;
+        
+        for(int i=0;i<size; i++) 
+        	qu.add(progresses[i]);//작업율
+        
+        Iterator iter = qu.iterator();
+        
+
+        while(qu.isEmpty()) {
+        	//한 사이클 동안
+   
+        	//큐의 head가 100이 아니라면
+        	if(qu.element() != 100) {
+            	//큐 내용을 전부 업뎃 시켜주고
+            	//num은 0으로 초기화
+        		for(int i=0;i<qu.size();i++) {
+        			int n = qu.get(i) + speeds[i];
+        			qu.add(i,n);
+        		}
+        		
+        	}
+
+        	else {
+        	//큐의 head가 100이되면
+        	//0이 아닌 곳을 만날 때까지 num을 증가시키고 list에 num값 추가 & num 초기화
+        	}
+        	
+        }//while 끝
+        
+        return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+		
+		int pro[] = {93,30,55};
+		int sp[] = {1,30,5};
+		
+		int an[] = solution(pro,sp);
+		for(int i : an) {
+			System.out.print(i + ", ");
+		}
+		
+		
+	}
+}

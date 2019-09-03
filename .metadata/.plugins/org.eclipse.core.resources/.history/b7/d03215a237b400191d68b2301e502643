@@ -1,0 +1,25 @@
+
+public class programmers12947 {
+
+	  public boolean solution(int x) {
+	      boolean answer = true;
+	      
+	      int sum = 0;
+	      int len = String.valueOf(x).length();
+	      
+	      for(int i=0;i<len;i++) {
+	    	  sum = sum + (int)(x%10);
+	    	  x = x/10;
+	      }
+	      
+	      if(sum != x)
+	    	  answer=false;
+	      
+	      return answer;
+	  }
+	   
+	  public static void main(String[] args) {
+		
+	}
+	
+}

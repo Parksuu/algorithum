@@ -1,0 +1,16 @@
+
+public class programmers_2_42577 {
+
+	
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;
+        
+        //작 큰 같 비교
+        
+        
+        
+        return answer;
+    }
+    
+    
+}

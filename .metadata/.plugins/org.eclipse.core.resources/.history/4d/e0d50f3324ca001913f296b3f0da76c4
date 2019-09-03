@@ -1,0 +1,22 @@
+333333333import java.util.*;
+
+public class programmers_2_다리를지나는트럭 {
+
+    static public int solution(int bridge_length, int weight, int[] truck_weights) {
+        int answer = 0;
+        
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> ing = new ArrayList<Integer>();
+        
+        
+        return answer;
+    }
+    
+    
+    public static void main(String[] args) {
+		int tw[] = {10};
+		
+    	System.out.println(solution(100,100,tw));
+	}
+	
+}

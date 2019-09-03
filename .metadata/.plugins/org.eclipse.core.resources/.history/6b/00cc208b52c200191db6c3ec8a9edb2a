@@ -1,0 +1,71 @@
+
+import java.util.*;
+
+public class codeup_4564_계단오르기 {
+	
+	static int scores[];
+	static boolean check = true; //true면 한칸, 두칸 가능 / flase면 무조건 두칸 가능
+	
+	static void stair(int idx) {
+		
+		System.out.println("stair -> " + idx);
+		
+		//기저조건
+		if( check==true && idx == 1) {
+			System.out.println("너니? " + scores[0]+scores[idx]);
+			return ;
+		}
+		
+		else if(check==false && idx==1) {
+			System.out.println("너?"  + scores[idx]);
+			return ;
+		}
+		
+		
+		if(check == true) {
+			if(scores[idx-1] > scores[idx-2]) {
+				scores[idx-1] = scores[idx-1] + scores[idx];
+				check = false;
+				System.out.println("1 " + scores[idx-1] +"socres[idx]" + scores[idx]);
+
+				stair(idx-1);
+			}
+			else {
+				scores[idx-2] = scores[idx-2] + scores[idx];
+				System.out.println("2 " + scores[idx-2] +"socres[idx]" + scores[idx]);
+				
+				stair(idx-2);
+			}
+		}
+		
+		
+		else {
+			scores[idx-2] = scores[idx-2] + scores[idx];
+			stair(idx-2);
+			check = true;
+			System.out.println("어딜까?3 " + scores[idx-2] +"socres[idx]" + scores[idx]);
+
+			stair(idx-2);
+		}
+		
+
+		
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		scores= new int[num];
+		
+		for(int i=0; i<num; i++)
+			scores[i] = sc.nextInt();
+		
+		
+		stair(num-1);
+		
+	}
+	
+}

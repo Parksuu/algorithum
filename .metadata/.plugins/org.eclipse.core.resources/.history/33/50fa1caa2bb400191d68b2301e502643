@@ -1,0 +1,53 @@
+
+public class programmers12913 {
+
+   static int solution(int[][] land) {
+        int answer = 0;
+
+        //두개씩만 기억해놓으면 되는거아님? m1 m2 만약 전에갔던게 n번째고 다음이 n번쪠에 m1있으면
+        //m2넘겨주고 그 전 위치 기억하고 이러면 됩니다.
+        int size = land[0].length;
+        
+        int max = 0;
+        int index = 0; //갈수 없는 위치
+        
+        //첫번째를 미리해놓고 다음부터는 index그냥 pass하기
+        for(int i=0;i<4;i++) {
+        	if(land[0][i]>max) {
+        		max = land[0][i];
+        		index = i;
+        	}
+        }
+        
+        answer = answer + max; //첫번째 줄 max를 answer에 넣는다
+        
+        for(int i=1;i<size;i++) {
+        	for(int j=0;j<4;j++) {
+     
+        		if(j==index)//j의 번째를 기억했다가 거기는 pass한다
+        			continue;
+        		else{
+    				System.out.println(i);
+    				System.out.println(j);
+        			if(land[i][j]>max) {
+            			max=land[i][j];
+            			index=j;
+        			}
+        		}	
+        	}
+        	answer = answer + max;
+        }
+        
+        
+        return answer;
+    }
+    
+    public static void main(String[] args) {
+    	
+    	int land[][] = {{1,2,3,5},{5,6,7,8},{4,3,2,1}};
+    	
+    	System.out.println(solution(land));
+    	
+    	
+	}
+}

@@ -1,0 +1,26 @@
+
+public class programmers_2_42577 {
+
+	
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;
+        
+        //작 큰 같 비교
+        int size = phone_book.length;
+        
+        for(int i=0; i<size; i++) {
+        	for(int j = 1; j<size;i++) {
+        		if(i !=j) {
+	        		int a = phone_book[i].length();
+	        		int b = phone_book[j].length();
+        		}
+        	}
+        }
+        
+        
+        
+        return answer;
+    }
+    
+    
+}

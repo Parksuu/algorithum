@@ -1,0 +1,32 @@
+import java.util.*;
+
+
+public class programmers_2_쇠막대기 {
+    
+	public int solution(String arrangement) {
+        //스택처럼 생각하면 되지 굳이 스택은 x
+		int answer = 0;
+        
+		String st[] = new String[arrangement.length()];
+		st = arrangement.split("");
+        
+		Stack stk = new Stack();
+		
+		stk.add(st[0]);
+		
+		for(int i=1; i<st.length; i++) {
+			if(stk.peek().equals(st[i])) {
+				stk.add(st[i]);
+				answer += 1;
+			}
+			else {
+				stk.pop();
+				answer += stk.size(); 
+			}
+		}
+        
+        
+        return answer;
+    }
+	
+}

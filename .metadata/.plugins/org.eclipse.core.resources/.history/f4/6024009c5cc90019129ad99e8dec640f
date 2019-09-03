@@ -1,0 +1,79 @@
+import java.util.*;
+
+
+public class programmers_2_Å¸°Ù³Ñ¹ö {
+
+	static int sum = 0;
+	
+	static int size=0;
+	static int targ = 0;
+	static int answer = 0;
+	
+	static void dfs(int num[], int sum, int index) {
+		if(index ==size) {//base case
+			if(sum==targ) {
+				answer ++;
+				return ;
+			}
+		}
+		
+		if(index<size) {
+			dfs(num, sum + num[index], index+1);
+			dfs(num, sum - num[index], index+1);
+		}
+	}
+	
+	static public int solution(int[] numbers, int target) {
+
+		targ = target;
+		size = numbers.length;
+		
+		dfs(numbers, sum, 0);
+		
+        return answer;
+    }
+    
+	public static void main(String[] args) {
+		int a[] = {1,1,1,1,1};
+		
+		System.out.println("´ä:" + solution(a,3));
+		
+	}
+}
+
+
+//static public int solution(int[] numbers, int target) {
+//    
+//    ArrayList<Integer> list = new ArrayList<Integer>();
+//    int temp = 0;
+//    
+//    list.add(numbers[0]);
+//    list.add(-1 * numbers[0]);
+//    temp = 2;
+//   
+//    for(int i=1;i<numbers.length; i++) {
+//	
+//    	for(int j=0; j<temp; j++) {
+//    		int a = list.remove(0);
+//    		list.add( a + numbers[i]);
+//    		list.add( a + (-1 * numbers[i]) );
+//
+//    	}//for
+//    	
+//    	temp = temp*2;  
+//    	
+//    }//for
+//    
+//    
+//    int answer = 0;         
+//    for(int i=0;i<list.size(); i++) {
+//    	if(list.get(i) == target)
+//    		answer++;
+//    }
+//    
+//    return answer;
+//}
+
+
+
+

@@ -1,0 +1,18 @@
+import java.util.*;
+
+
+public class bamm{
+
+	static class pos{
+		int x;
+		int y;
+		
+		//持失切
+		public pos(int x,int y) {this.x=x; this.y=y;}
+	}
+	
+	
+   public static void main(String[] args) {
+	   Queue qu = new LinkedList();//泥 持失
+  }
+}

@@ -1,0 +1,43 @@
+import java.util.*;
+
+
+public class kakao_2017_컬러링북 {
+	
+	class Pos{
+		int x;
+		int y;
+		
+		public Pos(int x, int y) {
+			x = this.x;
+			y = this.y;
+		}
+	}
+	
+
+	  public int[] solution(int m, int n, int[][] picture) {
+	      int numberOfArea = 0;
+	      int maxSizeOfOneArea = 0;
+	      
+	      int mx[] = {-1, 0, 1, 0};
+	      int my[] = { 0, 1, 0,-1};
+	      
+	      int[] answer = new int[2];
+	      
+	      int visited[][] = new int[m][n]; //전부 0으로 초기화하고, 방문했으면 그 숫자들로 채운다
+	      
+	      Queue<Pos> pos = new LinkedList<Pos>();
+	      
+	      //while들어가기 전
+	      
+	      
+	      
+	      
+	      
+	      return answer;
+	  }
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

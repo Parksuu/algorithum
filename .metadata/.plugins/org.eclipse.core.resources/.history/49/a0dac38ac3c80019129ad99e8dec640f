@@ -1,0 +1,49 @@
+public class programmser_2_HIndex {
+
+    static public int solution(int[] citations) {
+        int size = citations.length;
+    	
+    	int arr[][] = new int[size][2];
+        
+    	for(int i=0;i<size;i++) 
+    		arr[i][0] = citations[i];
+        
+    	for(int i=0;i<size;i++) {
+    		for(int j=0; j<size; j++) {
+    			if(i == j)
+    				continue;
+    			if(citations[i]<=citations[j]) {
+    				arr[i][1] = arr[i][1] + 1;
+    			}
+    		}
+    	}
+    	
+    	int answer = 0;
+    	
+    	for(int i=0;i<size;i++) {
+    		if(arr[i][0] == arr[i][1]) {
+    			if(answer <= arr[i][0])
+    				answer = arr[i][0];
+    		}
+    	}
+    	
+    	for(int i=0; i<size; i++) {
+    		System.out.print("i,0->" + arr[i][0] + "  ");
+    	}
+    	
+    	System.out.println("");
+    	for(int i=0; i<size; i++) {
+    		System.out.print("i,1-> " + arr[i][1]+ "  ");
+    	}
+    	
+        return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+		int a[]= {3,0,6,1,5};
+		
+		System.out.println(solution(a));
+		
+	}
+}

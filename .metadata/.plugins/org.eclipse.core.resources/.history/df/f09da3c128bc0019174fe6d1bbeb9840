@@ -1,0 +1,39 @@
+
+public class programmers_2_49993 {
+
+    public int solution(String skill, String[] skill_trees) {
+        int answer = 0;
+        
+        int size = skill_trees.length;
+        
+        String st[] = new String[skill.length()]; //skill의 내용들을
+        
+        for(int i=0; i<skill.length(); i++)
+        	st[i] = String.valueOf(skill.charAt(i));
+ 
+        
+        while(size !=0) {
+        	int i = 0; //skill_tree 개수만큼
+        	int j =0; //skill 개수만큼
+        	
+        	if(skill_trees[i].contains(st[j])) {
+        		
+        	}
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	size--;
+        }
+        
+        
+        
+        return answer;
+    }
+	
+	
+}

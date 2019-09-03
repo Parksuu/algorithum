@@ -1,0 +1,64 @@
+import java.util.*;
+
+public class beak_3190_뱀 {
+
+	
+	public static void main(String[] args) {
+
+		int wall[][];
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		wall = new int[n+1][n+1]; //1부터 시작하려고
+		
+		//사과 ->1
+		int k = sc.nextInt();
+		for(int i=0;i<k; i++) {
+			int a=sc.nextInt();
+			int b = sc.nextInt();
+			wall[a][b]=1;
+		}
+		
+		//방향전환 2개씩 pair
+		int l = sc.nextInt();
+		for(int i=0; i<l; i++) {
+			int a = sc.nextInt();
+			list.add(a);
+			String s = sc.next();
+			if(s.equals("D")) //D 오른쪽이면 -2 리스트에 넣는다
+				list.add(-2);
+			else			  //L 왼쪽이면 -1 리스트에 넣는다
+				list.add(-1);
+		}
+		
+		int sec = 1; //초
+		
+		int sneak = 3; //뱀 존재하는 곳 3
+		
+		//진행
+		while(true) {
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		//출력해보는거
+		for(int i=1;i<=n ;i++) {
+			for(int j=1; j<=n; j++) {
+				System.out.print(wall[i][j]);
+			}
+			System.out.println("");
+		}
+		
+		System.out.println(list);
+		
+		
+	}
+}

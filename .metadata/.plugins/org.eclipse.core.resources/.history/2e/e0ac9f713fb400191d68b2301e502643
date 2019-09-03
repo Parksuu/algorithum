@@ -1,0 +1,35 @@
+
+public class programmers12940 {
+
+	
+	  public int[] solution(int n, int m) {
+	      int[] answer = new int[2];
+	      int realn = n;
+	      int relam = m;
+	      
+	      //최대공약수 - 유클리드 호제법
+	      if(m>n) {
+	    	  int temp = m;
+	    	  m = n;
+	    	  n = temp;
+	      }
+	      
+	      //n이 크고 m이 작다고 가정
+	     int num = 0;
+	     do{
+	    	 num = n%m;
+	    	 n = m;
+	    	 m = num;
+	    	 
+	     }while(num !=0);
+	      
+	     //m이 최대공약수
+	      
+	      
+	      //최소공배수
+	      
+	      
+	      return answer;
+	  }	
+	
+}

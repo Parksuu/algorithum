@@ -1,0 +1,57 @@
+import java.util.*;
+
+public class programmers_2_문자열내마음대로정렬하기 {
+
+	public static String[] solution(String[] strings, int n) {
+
+		String[] test = new String[strings.length];
+		String[] ans = new String[strings.length];
+		for (int i = 0; i < strings.length; i++) {
+
+			test[i] = Character.toString(strings[i].charAt(n));//n번째 값 가져옴
+
+		}
+		Arrays.sort(test);
+		for (int i = 0; i < test.length; i++) {
+			for (int j = 0; j < test.length - 1; j++) {
+				for (int m = 0; m < test.length; m++)
+					if (test[i].contentEquals(test[j + 1])) {
+
+						Arrays.sort(strings);
+						ans[i] = strings[i];
+
+					} else {
+						for (int l = 0; l < test.length; l++) {
+							for (int k = 0; k < test.length; k++) {
+
+								if (test[l].equals(Character.toString(strings[k].charAt(n)))) {
+									ans[l] = strings[k];
+								}
+							}
+						}
+
+					}
+			}
+		}
+
+		String[] answer = new String[ans.length];// 정답 출력
+
+		for (int i = 0; i < ans.length; i++) {
+			answer[i] = ans[i];
+			System.out.println(answer[i]);
+
+		}
+
+		return answer;
+
+	}
+	  
+	  
+	  public static void main(String[] args) {
+		
+		  String s[] = {"abce","abcd","cdx"};
+		  solution(s,2);
+		  
+	}
+	
+}

@@ -1,0 +1,70 @@
+
+import java.util.*;
+
+public class programmers_2_다리를지나는트럭 {
+
+    static public int solution(int bridge_length, int weight, int[] truck_weights) {
+        
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> ing = new ArrayList<Integer>();
+        
+        //일단 첫번째 트럭을 list에 넣어준다.
+        list.add(truck_weights[0]);
+        ing.add(1);
+        int answer = 1; //넣어줬으니까 1초 지남
+        
+        int order=1; //얘는 적재할 트럭 번째
+        
+        
+        for(int kk=0;kk<8; kk++) {
+            boolean list_check = false;	
+        	
+            //무게 체크
+        	int size = 0;
+        	
+        	for(int i=0;i<list.size(); i++) {
+        		size = size + list.get(i); //적재되어있는 것 만큼
+        		if(size>weight) { //적재한거보다 크면 
+        			list_check = true;
+        			break;
+        		}
+        	}
+        	if(list_check ==false) {
+        		//다 돌고 나와서 적재한거보다 안크면 list에 다음 트럭 넣어주고 ing에도 넣어준다
+        		list.add(truck_weights[order]);
+        		ing.add(1);
+        		
+        		order++;//여기를 들어와야만 다음 트럭으로 넘어갈 수 있으니까
+        	}
+        	
+        	System.out.println(list);
+        	System.out.println(ing);
+        	
+        	//만약 bridge를 다 건넜으면 list랑 ing 지워주기
+        	if(ing.get(0) > bridge_length) {
+        		list.remove(0);
+        		ing.remove(0);
+            	System.out.println("여기1");
+        	}
+        		
+        	//움직여준다 - 이동
+        	for(int i=0; i<ing.size(); i++)
+        		ing.add(i, ing.get(i)+1);
+        	
+        	System.out.println("여기2");
+        	
+        	answer++;//할 거 다 끝났으면 answer++;
+        }
+        
+        return answer;
+    }
+    
+    
+    public static void main(String[] args) {
+		int tw[] = {7,4,5,6};
+		
+		System.out.println("답은...?");
+    	System.out.println(solution(2,10,tw));
+	}
+	
+}

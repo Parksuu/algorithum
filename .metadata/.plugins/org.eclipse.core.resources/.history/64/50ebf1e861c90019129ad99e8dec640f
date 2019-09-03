@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class kakao_2018_¿ÀÇÂÃ¤ÆÃ¹æ {
+	
+    public String[] solution(String[] record) {
+        String[] answer = {};
+        
+        
+        
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

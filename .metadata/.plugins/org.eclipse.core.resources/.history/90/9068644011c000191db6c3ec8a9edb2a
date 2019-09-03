@@ -1,0 +1,86 @@
+
+import java.util.*;
+
+public class programmers_2_다리를지나는트럭 {
+
+    static public int solution(int bridge_length, int weight, int[] truck_weights) {
+        
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> ing = new ArrayList<Integer>();
+        
+        //일단 첫번째 트럭을 list에 넣어준다.
+        list.add(truck_weights[0]);
+        ing.add(1);
+        int answer = 1; //넣어줬으니까 1초 지남
+        
+        int order=1; //얘는 적재할 트럭 번째
+        
+        
+        for(int nn=0;nn<7;nn++) {
+            boolean list_check = false;	
+        
+            
+            //무게 체크
+            if(order >= truck_weights.length)
+            	order = order-1;
+            
+        	int size = truck_weights[order];
+        	if(!list.isEmpty()){
+	        	for(int i=0;i<list.size(); i++) {
+	        		size = size + list.get(i); //적재되어있는 것 만큼
+	        		if(size>weight) { //적재한거보다 크면 
+	        			list_check = true;
+	        			break;
+	        		}
+	        		
+	        	}
+        	}
+        	
+    		
+        	if(order <truck_weights.length && list_check ==false) {
+        		System.out.println("세번째는 여길 들어와야지");
+        		
+        		//다 돌고 나와서 적재한거보다 안크면 list에 다음 트럭 넣어주고 ing에도 넣어준다
+        		list.add(truck_weights[order]);
+        		ing.add(1);
+        		
+        		order++;//여기를 들어와야만 다음 트럭으로 넘어갈 수 있으니까
+        	}
+
+
+        	System.out.println("list -> "+list);
+        	System.out.println("ing ->" + ing);
+    		System.out.println("size -> " + size);
+    		System.out.println("order -> " + order);
+        	
+        	
+        	if(ing.get(0) >= bridge_length) {
+        		System.out.println("ing 0번째->" + ing.get(0));
+        		list.remove(0);
+        		ing.remove(0);
+
+        	}
+
+        	
+        	//움직여준다 - 이동 (지금 들어온 애 빼고 +1씩 시켜준다
+        	for(int i=0; i<ing.size(); i++) {
+        		ing.set(i, ing.get(i)+1);
+        		System.out.println("ing.size()-1만큼이 " + (ing.size()-1));
+        	}
+        	
+        	System.out.println("answer -> " + answer);
+        	System.out.println("--------------------------");
+        	answer++;//할 거 다 끝났으면 answer++;
+        }
+        
+        return answer;
+    }
+    
+    
+    public static void main(String[] args) {
+		int tw[] = {7,4,5,6};
+		
+    	System.out.println(solution(2,10,tw));
+	}
+	
+}

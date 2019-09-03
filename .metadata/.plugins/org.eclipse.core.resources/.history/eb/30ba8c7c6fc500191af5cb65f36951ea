@@ -1,0 +1,29 @@
+import java.util.*;
+
+
+public class programmers_2_Å¸°Ù³Ñ¹ö {
+
+	public int solution(int[] numbers, int target) {
+    
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        for(int i=0;i<numbers.length; i++) {
+        	list.add(numbers[i]);
+        	list.add(-1 * numbers[i]);
+        	
+        	
+        	
+        	
+        }
+        
+        
+        int answer = 0; 
+        return answer;
+    }
+    
+	public static void main(String[] args) {
+		
+		System.out.println(add(3));
+		
+	}
+}

@@ -1,0 +1,42 @@
+import java.util.*;
+
+
+public class programmers_2_42586 {
+
+    static public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        Queue<Integer> qu = new LinkedList<Integer>();
+        
+        int size = progresses.length;
+        
+        for(int i=0;i<size; i++) 
+        	qu.add(progresses[i]);//ÀÛ¾÷À²
+        
+        
+        while(qu.isEmpty()) {
+        	
+        	
+        	
+        	
+        	
+        }
+        
+        
+        
+        return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+		
+		int pro[] = {93,30,55};
+		int sp[] = {1,30,5};
+		
+		int an[] = solution(pro,sp);
+		for(int i : an) {
+			System.out.print(i + ", ");
+		}
+		
+		
+	}
+}

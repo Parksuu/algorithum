@@ -1,0 +1,48 @@
+import java.util.*;
+
+
+public class programmers_2_Å¸°Ù³Ñ¹ö {
+
+	static public int solution(int[] numbers, int target) {
+    
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        int temp = 0;
+        
+        list.add(numbers[0]);
+        list.add(-1 * numbers[0]);
+        temp = 2;
+        
+        int st = temp;
+        
+        for(int i=1;i<numbers.length; i++) {
+        	temp = st;
+        	st = 0;
+        	for(int j=0; j<temp; j++) {
+        		int a = list.remove(0);
+        		list.add( a + numbers[i]);
+        		list.add( a + (-1 * numbers[i]) );
+
+        		st++;
+        		
+        	}//for
+    		System.out.println(list);
+    		System.out.println(st);
+        }//for
+        
+        
+        int answer = 0;         
+        for(int i=0;i<list.size(); i++) {
+        	if(list.get(i) == target)
+        		answer++;
+        }
+        
+        return answer;
+    }
+    
+	public static void main(String[] args) {
+		int a[] = {1,1,1};
+		
+		System.out.println(solution(a,3));
+		
+	}
+}

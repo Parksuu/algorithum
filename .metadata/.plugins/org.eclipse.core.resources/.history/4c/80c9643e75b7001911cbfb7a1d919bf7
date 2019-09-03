@@ -1,0 +1,15 @@
+
+public class programmers_2_42586 {
+
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        int check[] =new int[progresses.length]; //아직이면 0 다됐으면 1 해주고 계산해주고 2로 바꿔주기
+        
+        return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,37 @@
+import java.util.*;
+
+
+public class programmers_3_네트워크{
+
+	int computer[][];
+	boolean visited[];
+	List<Integer> list = new LinkedList<Integer>();
+	
+	void dfs(int a[][], boolean visited[], int idx) {
+		visited[idx] = true; //idx 방문
+		list.add(idx);
+		
+		for(int i=0; i<a.length; i++) {//행만큼 다 돈다, 세로로
+			
+			
+		}
+		
+	}
+	
+    public int solution(int n, int[][] computers) {
+    	computer = computers;
+    	visited = new boolean[n];
+    	
+    	dfs(computer,visited,0);
+    	
+    	
+    	
+    	int answer = 0;
+        return answer;
+    }	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

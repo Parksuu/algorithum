@@ -1,0 +1,23 @@
+
+public class programmers_2_49993 {
+
+    public int solution(String skill, String[] skill_trees) {
+        int answer = 0;
+        
+        int size = skill_trees.length;
+        
+        for(int i=0; i<size; i++) {
+        	for(int j = 1; j<size;i++) {
+        		int a = skill_trees[i].length();
+        		int b = skill_trees[j].length();
+        		
+        	}
+        }
+        
+        
+        
+        return answer;
+    }
+	
+	
+}

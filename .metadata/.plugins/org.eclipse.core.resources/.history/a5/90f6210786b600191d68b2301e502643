@@ -1,0 +1,21 @@
+
+public class programmers12933 {
+
+	  public long solution(long n) {
+	      long answer = 0;
+	      
+	      int size[] = new int[10]; //저장하기    
+	      String ss = String.valueOf(n);
+	      String s[] = ss.split("");
+	      
+	      for(String sss : s) {
+	    	  int a = Integer.parseInt(sss); //하나씩 가져오기
+	    	  if()
+	    	  
+	      }
+	      
+	      
+	      return answer;
+	  }
+	
+}

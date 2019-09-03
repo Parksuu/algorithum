@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class programmers_2_¿ß¿Â {
+	
+    public int solution(String[][] clothes) {
+    	int answer = 0;
+        
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+    	int size = clothes.length;
+    	
+    	
+    	return answer;
+    }
+	
+	
+	public static void main(String[] args) {
+
+		
+	}
+}

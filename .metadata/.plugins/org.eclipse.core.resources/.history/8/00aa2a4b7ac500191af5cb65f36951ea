@@ -1,0 +1,25 @@
+
+import java.util.*;
+
+public class ask {
+
+	class Pos {
+		int x;
+		int y;
+		
+		Pos(int x,int y){
+			this.x = x;
+			this.y = y;
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		ArrayList<Pos> list = new ArrayList<Pos>();
+		
+		Pos a = new Pos(3,3);
+		
+		
+	}
+}

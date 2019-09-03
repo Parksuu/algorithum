@@ -1,0 +1,56 @@
+
+public class programmers12913 {
+
+   static int solution(int[][] land) {
+        int answer = 0;
+
+        int size = land.length; //행의 개수
+        
+        int max = 0;
+        int index = 0; //갈수 없는 위치
+        int extra = 0;
+        
+        int rules[] = new int[4];
+        
+        for(int i=0;i<4;i++) {
+		        //첫번째를 1,2,3,4 순으로 max에 넣는다
+		        max = land[0][i];
+		        index = i;
+		      
+		        rules[i] = rules[i] + max; //첫번째 줄 max를 answer에 넣는다
+		        
+		        for(int j=1; j<size; j++) {
+		        	max=0; //0 만들어주고
+		        	for(int k=0; k<4; k++) {
+		        		if(k != index) {
+		        			if(land[j][k]>max) {
+		            			max=land[j][k];
+		            			extra=k;
+		        			}
+		        		}
+		        	}//3 포문
+		        	
+		        	index = extra;
+		        	rules[i] = rules[i] + max;
+		        }//2 포문
+        }//1포문
+        
+        answer = rules[0];
+        for(int i=1;i<4;i++) {
+        	if(answer<rules[i])
+        		answer = rules[i];
+        }
+        
+        
+        return answer;
+    }
+    
+    public static void main(String[] args) {
+    	
+    	int land[][] = {{1,2,3,5},{5,6,7,8},{4,3,2,1},{4,3,2,1},{4,3,2,1},{4,3,2,1},{4,3,2,1}};
+    	
+    	System.out.println(solution(land));
+    	
+    	
+	}
+}

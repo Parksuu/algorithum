@@ -1,0 +1,28 @@
+
+public class programmers12913 {
+
+    int solution(int[][] land) {
+        int answer = 0;
+
+        //두개씩만 기억해놓으면 되는거아님? m1 m2 만약 전에갔던게 n번째고 다음이 n번쪠에 m1있으면
+        //m2넘겨주고 그 전 위치 기억하고 이러면 됩니다.
+        int size = land[0].length;
+        
+        for(int i=0;i<size;i++) {
+        	for(int j=0;j<4;j++) {
+        		if()//j의 번째를 기억했다가 거기는 pass한다
+        		
+        		
+        	}
+        	
+        	
+        }
+        
+        
+        return answer;
+    }
+    
+    public static void main(String[] args) {
+
+	}
+}

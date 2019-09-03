@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class beak_3190_¹ì {
+
+	static int scores[];
+	static boolean check = true; //true¸é ÇÑÄ­, µÎÄ­ °¡´É / flase¸é ¹«Á¶°Ç µÎÄ­ °¡´É
+	
+	static void stair(int idx) {
+		
+		int j=0;
+		
+		for(int i = idx; idx>=1; i=j) {
+			
+			if(check == true) {
+				if(scores[idx-1] > scores[idx-2]) {
+					scores[idx-1] = scores[idx-1] + scores[idx];
+					check = false;
+					System.out.println("1111 " + scores[idx-1] +"socres[idx]" + scores[idx]);
+	
+					j = idx-1;
+				}
+				else {
+					scores[idx-2] = scores[idx-2] + scores[idx];
+					System.out.println("2222 " + scores[idx-2] +"socres[idx]" + scores[idx]);
+					
+					j = idx-2;
+				}
+			}
+			
+			
+			else {
+				scores[idx-2] = scores[idx-2] + scores[idx];
+				stair(idx-2);
+				check = true;
+				System.out.println("3333 " + scores[idx-2] +"socres[idx]" + scores[idx]);
+	
+				j = idx-2;
+			}
+			
+		}//for
+		
+		if( check==true && idx == 1) {
+			System.out.println("³Ê´Ï? " + scores[0]+scores[idx]);
+			return ;
+		}
+		
+		else if(check==false && idx==1) {
+			System.out.println("³Ê?"  + scores[idx]);
+			return ;
+		}
+		
+	
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		scores= new int[num];
+		
+		for(int i=0; i<num; i++)
+			scores[i] = sc.nextInt();
+		
+		
+		stair(num-1);
+		
+	}
+}

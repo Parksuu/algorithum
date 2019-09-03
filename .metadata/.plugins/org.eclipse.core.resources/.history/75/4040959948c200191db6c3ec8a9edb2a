@@ -1,0 +1,61 @@
+
+import java.util.*;
+
+public class codeup_4564_계단오르기 {
+	
+	static int scores[];
+	static boolean check = true; //true면 두칸 가능, flase면 무조건 두칸 가능
+	
+	static void stair(int idx) {
+		
+		//기저조건
+		if(idx==1 && check==false)
+			scores[1] = scores[1] + scores[idx];
+		
+		if(idx==1 && check==true)
+			scores[0] = scores[0] + scores[idx];
+		
+		
+		
+		if(check == true) {
+			System.out.println(idx-1);
+			if(scores[idx-1] > scores[idx-2]) {
+				scores[idx-1] = scores[idx-1] + scores[idx];
+				check = false;
+				
+				stair(idx-1);
+			}
+			else {
+				scores[idx-2] = scores[idx-2] + scores[idx];
+				stair(idx-2);
+			}
+		}
+		
+		else {
+			scores[idx-2] = scores[idx-2] + scores[idx];
+			stair(idx-2);
+			check = true;
+			
+			stair(idx-2);
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		scores= new int[num];
+		
+		for(int i=0; i<num; i++)
+			scores[i] = sc.nextInt();
+		
+		
+		stair(num-1);
+		
+		System.out.println("답: " + scores[0]);
+	}
+	
+}

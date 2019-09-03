@@ -1,0 +1,37 @@
+
+import java.util.*;
+
+public class ask {
+
+	static class Pos {
+		int x;
+		int y;
+		
+		Pos(int x,int y){
+			this.x = x;
+			this.y = y;
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		ArrayList<Pos> list = new ArrayList<Pos>();
+		
+		Pos a = new Pos(3, 3);
+		list.add(a);
+		
+		for(int i=0;i<1; i++) {
+			a.x = a.x + 1;
+			a.y = a.y + 1;
+			
+			list.add(new Pos(a.x, a.y));
+			
+		}
+		
+		System.out.println(list.get(0).x + list.get(0).y);
+		list.remove(0);
+		System.out.println(list.get(0).x + list.get(0).y);
+		
+	}
+}

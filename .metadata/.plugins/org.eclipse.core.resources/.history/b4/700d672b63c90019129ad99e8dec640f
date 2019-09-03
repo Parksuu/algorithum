@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class kakao_2018_오픈채팅방 {
+	
+    public String[] solution(String[] record) {
+        String instr[][] = new String[record.length][2];
+        HashMap<String, String> map = new HashMap<String,String>();
+        
+    	//들어온 명령어 저장해놓기
+    	for(int i=0;i<record.length;i++) {
+    		String s[] = record[i].split(" ");
+    		instr[i][0] = s[0]; //Enter, Leave, Change
+    		instr[i][1] = s[1]; //uid
+    		
+    		if(!map.isEmpty()) {
+    			map.put(s[0],s[1]); //uid와 name 넣음
+    		}
+    		
+    	}
+    	
+    	String[] answer = {}; 
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

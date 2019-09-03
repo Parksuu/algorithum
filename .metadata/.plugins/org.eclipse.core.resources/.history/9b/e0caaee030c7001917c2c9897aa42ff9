@@ -1,0 +1,40 @@
+import java.util.*;
+
+
+public class programmers_3_네트워크{
+
+	static int computer[][];
+	static boolean visited[];
+	static List<Integer> list = new LinkedList<Integer>();
+	
+	static void dfs(int a[][], boolean visited[], int idx) {
+		visited[idx] = true; //idx 방문
+		list.add(idx);
+		System.out.println("dfs...? " + idx);
+		
+		for(int i=0; i<a[0].length; i++) {
+			
+			for(int j=0; j<a.length; j++) {//행만큼 다 돈다, 세로로
+				if(a[j][idx]==1 && visited[j] ==false)
+					dfs(a,visited,j); //세로로 가다가 
+			}//for
+			
+		}//for	
+	}
+	
+    static public int solution(int n, int[][] computers) {
+    	computer = computers;
+    	visited = new boolean[n];
+    	
+    	dfs(computer,visited,0);
+    	
+    	int answer = 0;
+        return answer;
+    }	
+	
+	
+	public static void main(String[] args) {
+		int a[][] = {{1,0,0},{0,1,0},{0,0,1}};
+		solution(3,a);
+	}
+}

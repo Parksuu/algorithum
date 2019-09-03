@@ -1,0 +1,53 @@
+import java.util.*;
+
+
+public class programmers_2_42586 {
+
+    static public int[] solution(int[] progresses, int[] speeds) {
+
+        List<Integer> list = new LinkedList<Integer>();//답 담는 곳
+        
+        int idx = 0;
+        int size = progresses.length;
+        
+        while(idx <= size-1) {
+        	int num = 0;
+        	
+        	//일단 일을 하고
+    		for(int i=0; i<size;i++) 
+    			progresses[i] = progresses[i] + speeds[i];
+    		
+    		int temp = idx;
+    		
+    		System.out.println("temp에 뭐가 들어가는데  " + temp + "list " + list + "num " + num);
+    		if(temp<3) {
+    			System.out.println("????????????????  "+temp);
+    			System.out.println("????????????????왜...?  "+ progresses[temp]);
+	    		while(progresses[temp] >= 100) {
+	    			num++;
+	    			temp++;
+	    		}
+    		}
+    		if(num>0)
+    			list.add(num);
+    		
+    		idx = temp;
+        }//while 끝
+        return list.stream().mapToInt(i->i).toArray();
+    }
+	
+	
+	public static void main(String[] args) {
+		
+		int pro[] = {93,30,55};
+		int sp[] = {1,30,5};
+		
+		int an[] = solution(pro,sp);
+
+		System.out.print("답: ");
+		for(int i : an) {
+			System.out.println(i);
+		}
+		
+	}
+}

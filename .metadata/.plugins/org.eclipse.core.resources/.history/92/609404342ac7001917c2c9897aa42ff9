@@ -1,0 +1,21 @@
+import java.util.*;
+
+
+public class programmers_3_네트워크{
+
+	
+    public int solution(int n, int[][] computers) {
+        int answer = 0;
+        int visited[][] = computers;
+        LinkedList<Integer> list = new LinkedList<Integer>(); //연결된거 저장
+        
+        
+        
+        return answer;
+    }	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

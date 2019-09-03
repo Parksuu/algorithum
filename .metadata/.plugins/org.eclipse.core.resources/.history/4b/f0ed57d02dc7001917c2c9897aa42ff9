@@ -1,0 +1,31 @@
+import java.util.*;
+
+
+public class programmers_3_네트워크{
+
+	int computer[][];
+	int visited[];
+	
+	void dfs(int a[][], int visited[], int idx) {
+		visited[idx] = true; //idx 방문
+		
+		
+	}
+	
+    public int solution(int n, int[][] computers) {
+    	computer = computers;
+    	visited = new int[n];
+    	
+    	dfs(computer,visited,0);
+    	
+    	
+    	
+    	int answer = 0;
+        return answer;
+    }	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

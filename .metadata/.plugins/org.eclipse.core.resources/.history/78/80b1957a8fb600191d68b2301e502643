@@ -1,0 +1,34 @@
+
+public class programmers12926 {
+
+	
+	  static public String solution(String s, int n) {
+	      String answer = "";
+	      
+	      String ar[] = s.split("");
+	      
+	      for(String ss : ar) {
+	    	  String st = "";
+	    	  char a;
+	    	  
+	    	  if(ss.charAt(0) == 'z') 
+	    		  a = (char) ('a' + (n-1));
+
+	    	  else 
+	    		 a = (char) (ss.charAt(0) + n);
+
+    		  st = String.valueOf(a);
+	    	  answer = answer + st;
+	      }
+	      
+	      
+	      return answer;
+	  }
+	
+	public static void main(String[] args) {
+
+		System.out.println(solution("aBz",4));
+	}
+	
+	
+}

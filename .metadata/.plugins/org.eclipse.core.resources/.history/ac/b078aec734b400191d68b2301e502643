@@ -1,0 +1,13 @@
+
+public class programmers12947 {
+
+	  public boolean solution(int x) {
+	      boolean answer = true;
+	      return answer;
+	  }
+	  
+	  public static void main(String[] args) {
+		
+	}
+	
+}

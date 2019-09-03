@@ -1,0 +1,24 @@
+
+public class programmers12926 {
+
+	
+	  public String solution(String s, int n) {
+	      String answer = "";
+	      
+	      
+	      
+	      
+	      return answer;
+	  }
+	
+	public static void main(String[] args) {
+		
+		char c = 'c' + 1;
+		int d = 'c' + 1;
+		System.out.println(c);
+		System.out.println(d);
+		
+	}
+	
+	
+}

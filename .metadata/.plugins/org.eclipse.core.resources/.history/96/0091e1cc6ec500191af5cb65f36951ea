@@ -1,0 +1,31 @@
+import java.util.*;
+
+
+public class programmers_2_Å¸°Ù³Ñ¹ö {
+
+    public int solution(int[] numbers, int target) {
+        int answer = 0;
+        
+        
+        
+        
+        return answer;
+    }
+	
+	static int add(int num) {
+		
+		if(num == 0)
+			return 0;
+		
+		
+		return num + add(num-1);
+		
+	}
+    
+    
+	public static void main(String[] args) {
+		
+		System.out.println(add(3));
+		
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;programmers_2_49993&apos; to &apos;programmers_2_스킬트리&apos;&#x0D;&#x0A;- Original project: &apos;Algo&apos;&#x0D;&#x0A;- Original element: &apos;programmers_2_49993&apos;&#x0D;&#x0A;- Renamed element: &apos;programmers_2_스킬트리&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;programmers_2_49993&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{programmers_2_49993.java[programmers_2_49993" matchStrategy="1" name="programmers_2_스킬트리" qualified="false" references="true" similarDeclarations="false" stamp="1565589491780" textual="false" version="1.0"/>
+</session>
