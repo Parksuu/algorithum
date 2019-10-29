@@ -38,7 +38,6 @@ public class beak_6603_·Î¶Ç {
 			for(int i=0;i<num;i++) {
 				list.add(sc.nextInt());
 			}
-			
 
 			combination(list, num, 6, 0);
 		

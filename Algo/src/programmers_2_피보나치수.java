@@ -25,7 +25,6 @@ public class programmers_2_피보나치수 {
 			a = b%1234567;
 			b = c%1234567;
 		}
-		
 		return a;
 	}
 	

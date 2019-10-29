@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class beak_2667_단지번호붙이기 {
-// testffff
 	static class Pos{
 		int x;
 		int y;

@@ -47,6 +47,5 @@ public class programmers_영어끝말잇기 {
     	int an[] = solution(3,s);
     	System.out.println(an[0] + ", " +an[1]);
 	}
-    
-    
+
 }
