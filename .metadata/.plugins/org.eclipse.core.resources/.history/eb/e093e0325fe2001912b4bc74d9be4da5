@@ -1,0 +1,24 @@
+package nhn_ct;
+
+import java.util.*;
+
+public class ct2 {
+
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner (System.in);
+		
+		for(int i=0;i<sc.nextInt();i++) {
+			String ar[] = new String[2];
+			ar = sc.next().split(" ");
+			
+			if(ar[0].equals("enqueue"))
+				
+			else
+				
+		}
+		
+		
+		
+	}
+	
+}

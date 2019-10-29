@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = new int[queries.length];
+        boolean check[] = new boolean[queries.length];
+        ArrayList<String> list = new ArrayList<String>();
+        
+        for(int i=0;i<words.length;i++) {
+        	String a = words[i];
+        	for(int j=0;j<queries.length; j++) {
+        		
+        	}
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

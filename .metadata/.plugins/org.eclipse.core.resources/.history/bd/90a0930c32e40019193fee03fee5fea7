@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class programmser_2_숫자야구 {
+
+    public int solution(int[][] baseball) {
+        int answer = 0;
+        
+        for(int i=0;i<baseball.length; i++) {
+        	String a = String.valueOf(baseball[i][0]); //숫자 문자열 형태로 넣어놓음
+        	int s = baseball[i][1]; //strike 수 - 자리,숫자 다 맞음
+        	int b = baseball[i][2]; //ball 수 - 숫자만 맞음
+        	
+        }
+        
+        
+        for(int i=123; i<=987; i++) {
+        	int strike = 0;
+        	int ball = 0;
+        	
+        	String s1[] = String.valueOf(i).split("");
+        	
+        	
+        }
+        
+        
+        return answer;
+    }
+    
+    
+    public static void main(String args[]) {
+    	
+    	
+    }
+    
+}

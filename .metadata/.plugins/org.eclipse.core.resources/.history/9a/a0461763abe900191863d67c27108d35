@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class hmm {
+
+	  public String solution(String s) {
+	      String answer = "";
+	      
+	      if(s.length()%2 == 0 ) {
+	    	  
+	      }
+	      else {
+	    	  
+	      }
+	      
+	      return answer;
+	  }
+	
+}

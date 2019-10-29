@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = {};
+        
+        for(int i=0;i<queries.length;i++) {
+        	String now = queries[i];
+        	int len = now.length();
+        	while(len != 0) {
+        		
+        		
+        		len--;
+        	}
+        	
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

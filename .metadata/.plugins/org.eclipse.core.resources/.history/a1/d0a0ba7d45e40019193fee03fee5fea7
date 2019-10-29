@@ -1,0 +1,56 @@
+import java.util.*;
+
+public class programmers_영어끝말잇기 {
+    public int[] solution(int n, String[] words) {
+        int[] answer =new int[2];
+        int len = words.length;
+        int turn = 0;       
+        int num = 0;
+        
+    	char last = words[0].charAt(words[0].length()-1);
+        for(int i=1;i<len;i++) {
+        	if(last != words[i].charAt(0)) {
+        		answer[0] = num;
+        		answer[1] = turn+1;
+        		return answer;
+        	}
+        	
+        	last = words[i].charAt(words[i].length()-1);
+    		
+        	turn = (turn+1) %n;
+        	
+        	if(turn == 0)
+        		num++;
+        }    
+        
+
+        boolean check = false;
+
+        for(int i=0;i<len;i++) {
+        	for(int j=i+1;j<len;j++) {
+        		if(words[i].equals(words[j])) {
+        			answer[0] = num;
+        			answer[1] = turn;
+        			check = true;
+        			break;
+        		}
+            	
+            	turn = (turn+1) %n;
+            	
+            	if(turn == 0)
+            		num++;
+        	}
+        	
+        
+        }
+        
+        if(check == false){
+        	answer[0] = 0;
+        	answer[1] = 0;
+        }
+        
+
+        return answer;
+    }
+    
+}

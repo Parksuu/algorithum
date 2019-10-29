@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = new int[queries.length];
+        ArrayList<String> list = new ArrayList<String>();
+        
+        for(int i=0;i<words.length;i++) {
+        	String a = words[i];
+        	for(int j=0;j<queries.length; j++) {
+        		if(a.length() != queries[j].length())
+        			continue; //길이 안맞으면 넘기기
+        		else {
+        			int firstIdx = queries[j].indexOf("?");
+        			int lastIdx = queries[j].indexOf("?");
+        			
+        			//같으면
+        			if(firstIdx == lastIdx) {
+    					queries[j].replace(queries[j].charAt(firstIdx), a.charAt(firstIdx));        				
+        			}
+        			
+        			//다르면
+        			else {
+        				for(int k = firstIdx; k<=lastIdx; k++) {
+        					queries[j].replace(queries[j].charAt(k), a.charAt(k));
+        				}
+        			}//안쪽 else
+        			
+        		}//바깥 else
+        	}//안쪽 for
+        }//바깥 for
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,58 @@
+import java.util.*;
+import java.util.regex.Pattern;
+
+public class kakao_2019_4 {
+
+   static public int[] solution(String[] words, String[] queries) {
+        int[] answer = new int[queries.length];
+        String[] list = new String[queries.length];
+        
+        int fromIndex = -1;
+        for(int i=0;i<queries.length;i++) {
+	        while ((fromIndex = queries[i].indexOf("?", fromIndex + 1)) >= 0) {
+	          list[i] =list[i]+"?";
+	        }
+        }
+        
+
+        
+        for(int i=0;i<words.length;i++) {
+        	String a = words[i];
+        	for(int j=0;j<queries.length; j++) {
+        		String ques = "";
+        		if(a.length() != queries[j].length())
+        			continue; //길이 안맞으면 넘기기
+        		else {
+        			int firstIdx = queries[j].indexOf("?");
+        			int lastIdx = queries[j].lastIndexOf("?");
+        			
+        			if(firstIdx == lastIdx) 
+    					queries[j].replace(queries[j].substring(firstIdx,firstIdx+1),a.substring(firstIdx,firstIdx+1));        				
+        			
+        			//다르면
+        			else
+        				queries[j].replace(queries[j].substring(firstIdx,lastIdx+1),a.substring(firstIdx,lastIdx+1));
+        			
+        		}//바깥 else
+        		
+        		//대체할거 다 대체하고
+        		if(a.equals(queries[j])) 
+        			answer[i]++;
+        		
+        		System.out.println(queries[0]);
+        		
+        	}//안쪽 for
+        }//바깥 for
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		String w[]= {"frodo", "front", "frost", "frozen", "frame", "kakao"};
+		String q[] = {"fro??", "????o", "fr???", "fro???", "pro?"};
+		int result[] = solution(w,q);
+		
+		for(int i=0;i<result.length;i++)
+			System.out.println(result[i]);
+	}
+}

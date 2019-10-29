@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class programmers_2_예상대진표 {
+
+    public int solution(int n, int a, int b)
+    {
+        int arr[] = new int[n+1]; // n개만큼 만들고
+        
+        int a_idx = a;
+        int b_idx = b;
+        
+        for(int i=1; i <= n; i = i+2) {
+        	
+        	if(arr[i] == a_idx || arr[i] == b_idx) {
+        		
+        	}
+        	if(arr[i+1] == a_idx || arr[i+1] == b_idx) {
+        		
+        	}
+        	else {
+        		
+        	}
+        	
+        }
+        
+
+        return 0;
+    }
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class beak_1918_후위표기식 {
+
+	public static void main(String[] args) {
+		Stack<String> stk = new Stack<String>();
+		
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		
+		String arr[] = s.split("");
+		ArrayList<String> list = new ArrayList<String>();
+		
+		for(int i=0;i<arr.length;i++) {
+			String a = arr[i];
+			
+			if(a.equals("+") || a.equals("-")) {
+				if(stk.isEmpty())
+					stk.add(a);
+				else {
+					stk.peek()
+				}
+			}//if
+			
+			else if(a.equals("*") || a.equals("/")) {
+				if(stk.peek().equals("*") || stk.peek().equals("/")) {
+					list.add(stk.pop());
+				}
+				
+			}
+			else { //a~z의 문자
+				list.add(a);
+			}
+			
+			
+		}//for
+		
+	}
+}

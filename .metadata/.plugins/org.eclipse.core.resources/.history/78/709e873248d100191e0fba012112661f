@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = new int[queries.length];
+        
+        for(int i=0;i<queries.length;i++) {
+        	String now = queries[i];
+        	int len = now.length();
+        	
+        	if(!now.contains("?")) //쿼리에 ?가 없는 경우
+        		answer[i]=0;
+        	for(int j=0; j<len; j++) {
+        		
+        	}
+        	
+        	for(int j=0;j<len; j++) {
+        		
+        	}
+        	
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

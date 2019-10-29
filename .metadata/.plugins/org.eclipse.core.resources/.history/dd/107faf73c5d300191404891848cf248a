@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class beak_5622_´ÙÀÌ¾ó {
+
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		String s = sc.next();
+		
+		String ss[] = s.split("");
+		
+		
+		for(int i=0; i<ss.length; i++) {
+			
+			
+		}
+		
+		
+	}
+}

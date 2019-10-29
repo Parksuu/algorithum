@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class programmers_4_3xn타일링 {
+	 
+	static int dp[] = new int[5001];
+	static long dp[] = new long[5001];
+	
+	static public int solution(int n) {
+		dp[0] = 1;
+		dp[2] = 3;
+		
+		if(n % 2 !=0) return 0;
+		
+		for(int i=4; i<= n; i = i+2) {
+			dp[i] = dp[i-2] *3;
+			
+			for(int j=3; j<= i ; j++) {
+				if(j%2 == 0) {
+					dp[i] += dp[i-j] *2; //짝수개의 타일마다 +2 해줘야함
+				}
+			}
+			
+			dp[i] = dp[i]%1000000007;
+		}
+		
+		return (int) (long)dp[n];
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		solution(4);
+	}
+	
+}

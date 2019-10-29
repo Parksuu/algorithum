@@ -1,0 +1,96 @@
+package nhn_ct;
+
+import java.util.*;
+
+public class ct1 {
+
+	public static void main(String[] args) throws Exception {
+		
+		Scanner sc = new Scanner(System.in);
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int n = sc.nextInt();
+		String s[] = new String[n];
+		
+		for(int i=0;i<n; i++)
+			s[i] = sc.next();
+		
+		
+		for(int i=0;i<n;i++) {
+			if(map.containsKey(s[i])) {
+				int m = map.get(s[i]);
+				map.put(s[i], ++m);
+			}
+			else
+				map.put(s[i], 1);
+		}
+		
+		int min = map.get(s[0]);
+		int all = 0;
+		for(String key: map.keySet()) {
+			all += map.get(key);
+			list.add(map.get(key));
+			if(map.get(key)<min)
+				min = map.get(key);
+		}
+		
+		int minn = min;
+		boolean check = false;
+		int j = list.get(0);
+		for(int i=1;i<list.size();i++) {
+			if(list.get(i)==j){
+				j = list.get(i);
+			}
+			else {
+				check = true;
+				break;
+			}
+		}
+		
+		boolean once = false;
+		if(check == false) { //개수가 원래 동일한 짝이면
+			System.out.println("Y1");
+			System.out.println(all);
+			System.out.println(map.size());
+		}
+		else {//최소값만 가져와서 +1시켜서 맞는지 비교
+			list.add(min+1);
+			boolean check1 = false;
+			int temp = list.get(0);
+			for(int i=0;i<list.size();i++) {
+				int k = list.get(i);
+				if(k==minn && once==false) {//min은 없는걸로 체크
+					System.out.println("k"+k);
+					System.out.println("여기?");
+					once=true;
+					continue;
+				}
+				if(k==temp){
+					System.out.println("여기");
+				}
+				else {
+					System.out.println(temp + " "+ k);
+					check1 = true;
+					break;
+				}
+				
+				temp = k;
+			}
+			
+			
+			if(check1 == false) { //개수가 원래 동일한 짝이면
+				all = all+1;
+				System.out.println("Y2");
+				System.out.println(all);
+				System.out.println(map.size());
+			}
+			else if(check1 == true) {
+				System.out.println("N");
+				System.out.println(all);
+				System.out.println(map.size());
+			}
+			
+		}
+		
+	}
+}

@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class programmers_4_3xn타일링 {
+	 
+	static int dp[] = new int[5001];
+	
+	static int tile(int n) {
+		int result = 0;
+		
+		//기저조건
+		if(n == 0) return 1;
+		if(n == 1) return 0;
+		if(n == 2) return 3;
+
+		if(dp[n] !=0) return dp[n];
+
+		result = tile(n-2) * 3;
+		for(int i=3; i<= n ; i++) {
+			if(i%2 == 0) {
+				System.out.println("n=" + n);
+				System.out.println("i=" + i);
+				System.out.println("??" + dp[n-i]);
+				result = result + dp[n-i] *2; //짝수개의 타일마다 +2 해줘야함
+			}
+		}
+		return dp[n] = result%1000000007;
+	}
+	
+	static public int solution(int n) {
+		dp[0] = 1;
+		dp[2] = 3;
+	    return tile(n);
+	}
+	
+	public static void main(String[] args) {
+		solution(4);
+	}
+	
+}

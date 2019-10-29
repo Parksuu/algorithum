@@ -1,0 +1,55 @@
+package nhn_ct;
+
+import java.util.*;
+
+public class ct2 {
+
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner (System.in);
+		int n = sc.nextInt();
+		int idx[] = new int[n];
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		ArrayList<Integer> qu = new ArrayList<Integer>();
+		
+		int dequ = -1;
+		for(int i=0;i<n+1;i++) {
+			String ar[] = new String[2];
+			ar = sc.nextLine().split(" ");
+			
+			if(ar[0].equals("en")) {
+				int a = Integer.parseInt(ar[1]);
+				list.add(a);
+				idx[a]++;
+			}
+			
+			else
+				dequ++;	
+		}
+		
+		System.out.println(list);
+		
+		int max = idx[1];
+		int max_idx = 0;
+		
+		boolean check = false;
+		
+		for(int i=0;i<dequ;i++) {
+			for(int j=0;j<idx.length;j++) {
+				if(max < idx[j]) {
+					max = idx[j];
+					max_idx = j;
+				}
+				if(max == idx[j])
+					check=true;
+				
+			}
+			
+			int num = list.remove(max_idx); // 제거해주고
+			qu.add(num);
+			idx[max_idx]--;
+		}
+		
+		
+	}
+	
+}

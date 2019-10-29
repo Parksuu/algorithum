@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class hmm {
+
+	  public String solution(String s) {
+	      String answer = "";
+	      
+	      if(s.length()%2 == 0 ) {
+	    	  
+	      }
+	      else {
+	    	  
+	    	  answer = answer + String.valueOf(s.charAt(s.length()/2 +1));
+	      }
+	      
+	      return answer;
+	  }
+	
+}

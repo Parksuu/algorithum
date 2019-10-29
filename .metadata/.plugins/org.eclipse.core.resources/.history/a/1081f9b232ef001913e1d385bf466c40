@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class programmers_4_3xn타일링 {
+	 
+	int dp[] = new int[5001];
+	
+	int tile(int n) {
+		int result = 0;
+		
+		//기저조건
+		if(n == 0) return 1;
+		if(n == 1) return 0;
+		if(n == 2) return 3;
+		
+		if(dp[n] !=0) return dp[n];
+		
+		result = tile(n-2) * 3;
+		for(int i=3; i< ; i++) {
+			if(i%2 == 0)
+				result = result + tile(n-i);
+		}
+		
+		return result;
+	}
+	
+	public int solution(int n) {
+	      int answer = 0;
+	      
+	      return answer;
+	}
+	
+}

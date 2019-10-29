@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class kakao_2017_다트게임 {
+
+	static public int solution(String dartResult) {
+	      int answer = 0;
+	      String result[] = new String[dartResult.length()];
+	      
+	      ArrayList<Integer> num = new ArrayList<Integer>();
+	      
+	      for(int i=0;i<dartResult.length();i++) 
+	    	result[i] = String.valueOf(dartResult.charAt(i));
+	      
+	      for(int i=0;i<dartResult.length();i++) {
+	    	  String r = result[i];//하나씩 가져와서
+	    	  int a=0; //숫자 초기화
+	    	  if(r.equals("1") ||r.equals("2")||r.equals("3")||r.equals("4")||r.equals("5")
+	    	   ||r.equals("6")||r.equals("7")||r.equals("8")||r.equals("9")||r.equals("0"))
+	    	  { //들어온 값이 숫자면
+	    		  int a = Integer.parseInt(r);
+	    		  
+	    	  }
+	    	  
+	      }
+	      
+	      
+	      return answer;
+	}
+	
+	public static void main(String[] args) {
+		String s = "1S*2T*3S";
+		
+		System.out.println(solution(s));
+	}
+}

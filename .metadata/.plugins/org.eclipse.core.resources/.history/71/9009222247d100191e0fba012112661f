@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = {};
+        
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

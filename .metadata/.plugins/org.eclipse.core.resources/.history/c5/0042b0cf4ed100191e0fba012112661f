@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = new int[queries.length];
+        
+        for(int i=0;i<words.length;i++) {
+        	String a = words[i];
+        	for(int j=0;j<queries.length; j++) {
+        		if(a.length() != queries[j].length())
+        			continue; //길이 안맞으면 넘기기
+        		else {
+        			int firstIdx = queries[j].indexOf("?");
+        			int lastIdx = queries[j].indexOf("?");
+        			
+        			//같으면
+        			if(firstIdx == lastIdx) {
+        				
+        			}
+        			
+        			//다르면
+        			else {
+        				
+        			}
+        		}
+        	}
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

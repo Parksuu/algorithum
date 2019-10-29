@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class kakao_2017_다트게임 {
+
+	static public int solution(String dartResult) {
+	      int answer = 0;
+	      
+	      
+	      
+	      
+	      return answer;
+	}
+	
+	public static void main(String[] args) {
+		String s = "1S*2T*3S";
+		
+		System.out.println(solution(s));
+	}
+}

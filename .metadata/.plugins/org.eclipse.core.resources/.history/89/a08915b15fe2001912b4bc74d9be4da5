@@ -1,0 +1,33 @@
+package nhn_ct;
+
+import java.util.*;
+
+public class ct2 {
+
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner (System.in);
+		int n = sc.nextInt();
+		int idx[] = new int[n];
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		int dequ = 0;
+		for(int i=0;i<n;i++) {
+			String ar[] = new String[2];
+			ar = sc.next().split(" ");
+			
+			if(ar[0].equals("enqueue")) {
+				int a = Integer.parseInt(ar[1]);
+				list.add(a);
+				idx[a]++;
+			}
+			
+			else
+				dequ++;
+				
+		}
+		
+		
+		
+	}
+	
+}

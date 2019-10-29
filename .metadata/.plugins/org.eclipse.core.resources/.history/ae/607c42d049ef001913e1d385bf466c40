@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class programmers_3_µî±·±æ {
+
+	
+    public int solution(int m, int n, int[][] puddles) {
+        int answer = 0;
+        int dp[][] = new int[m+1][n+1];
+        
+        dp[1][1] = 1; //ÃÊ±â °ªÀº 1·Î
+        for (int p[] : puddles) {
+            dp[p[0]][p[1]] = -1; //¿õµ¢ÀÌ´Â -1
+        }
+        
+        for(int i=0; i<puddles.length; i++) {
+        	for(int j=0;j<puddles[i].length;j++) {
+        		if(dp[i][j] == -1)
+        			dp[i][j] = 0;
+        		if(i == 1) {
+        			
+        		}
+        	}
+        }
+        
+        
+        
+        return answer;
+    }
+    
+    
+}

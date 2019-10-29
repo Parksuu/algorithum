@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class programmser_2_숫자야구 {
+
+    public int solution(int[][] baseball) {
+        int answer = 0;
+        
+        for(int i=0;i<baseball.length; i++) {
+        	String a = String.valueOf(baseball[i][0]);
+        	
+        	
+        }
+        
+        
+        
+        
+        return answer;
+    }
+    
+    
+    public static void main(String args[]) {
+    	
+    	
+    }
+    
+}

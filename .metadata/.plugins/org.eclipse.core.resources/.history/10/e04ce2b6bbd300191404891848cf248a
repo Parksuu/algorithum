@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class beak_1371_가장많은글자 {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		String s = sc.next();
+		String as[] = s.split("");
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+		
+		for(int i=0; i<as.length; i++) {
+			String one = as[i];
+			
+			if(map.containsKey(one)) {
+				
+			}
+			
+			else if(!map.containsKey(one) && one != " "){
+				map.put(one, 1);
+			}
+			
+		}//for 끝
+		
+		
+	}
+}

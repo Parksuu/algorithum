@@ -1,0 +1,39 @@
+package nhn_ct;
+
+import java.util.*;
+
+public class ct1 {
+
+	public static void main(String[] args) throws Exception {
+		
+		Scanner sc = new Scanner(System.in);
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int n = sc.nextInt();
+		String s[] = new String[n];
+		
+		for(int i=0;i<n; i++)
+			s[i] = sc.next();
+		
+		map.put(s[0], 1); //하나 넣고
+		
+		for(int i=1;i<n;i++) {
+			if(map.containsKey(s[i])) {
+				int m = map.get(s[i]);
+				map.put(s[i], m++);
+			}
+			else
+				map.put(s[i], 1);
+		}
+		
+		for(String key: map.keySet()) {
+			list.add(map.get(key));
+		}
+		
+		
+		
+		
+		
+		
+	}
+}

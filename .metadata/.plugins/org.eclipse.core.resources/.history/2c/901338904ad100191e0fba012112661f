@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class kakao_2019_4 {
+
+    public int[] solution(String[] words, String[] queries) {
+        int[] answer = new int[queries.length];
+        boolean check[] = new boolean[queries.length];
+        
+        for(int i=0;i<queries.length;i++) {
+        	String now = queries[i];
+        	int len = now.length();
+        	String a = String.valueOf(now.charAt(0));//첫번째 문자
+        	String b = String.valueOf(now.charAt(now.length()-1)); //마지막 문자
+        	
+        	if(!now.contains("?")) //쿼리에 ?가 없는 경우
+        		check[i] = true;
+        	if(a.equals("?")) {
+        		String temp = "";
+        		for(int j=1; j<now.length();j++) {
+        			String c = String.valueOf(now.charAt(j));
+        			if(!c.equals("?")) {
+        				check[]
+        			}
+        			temp = c;
+        			
+        		}
+        	}
+        	
+        	
+        	if(b.equals("?"))
+        	
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class beak_1918_후위표기식 {
+
+	public static void main(String[] args) {
+		Stack<String> stk = new Stack<String>();
+		String arr[] = new String[100];
+		
+		
+	}
+}

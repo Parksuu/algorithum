@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class programmers_영어끝말잇기 {
+    public int[] solution(int n, String[] words) {
+        int[] answer =new int[2];
+        int len = words.length;
+        int turn = 0;       
+        HashMap<String, Boolean> map = new HashMap<String,Boolean>();
+        int i;
+        for(i=0;i<len;i++) {
+        	//front back 비교
+        	if(i != 0) {
+	        	if(words[i-1].charAt(words[i-1].length()-1) != words[i].charAt(0))
+	        		break;
+        	}
+        	
+        	//map에 넣어주고 있는지 비교
+        	if(i==0) {
+        		map.put(words[i], true);
+        	}
+        	else {
+        		if(map.containsKey(words[i]))
+        			break;
+        	}
+        }
+        
+        if(i == len-1) {
+        	answer[0]=0;
+        	answer[1]=0;
+        }
+        
+        return answer;
+    }
+    
+}

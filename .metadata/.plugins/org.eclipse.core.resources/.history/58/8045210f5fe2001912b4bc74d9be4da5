@@ -1,0 +1,15 @@
+package nhn_ct;
+
+import java.util.*;
+
+public class ct2 {
+
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner (System.in);
+		
+		
+		
+		
+	}
+	
+}
